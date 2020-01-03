@@ -39,13 +39,10 @@ const Layout = ({ children }) => {
         <br />
         <br />
         <br />
-        <br />
         <footer>
-          © {new Date().getFullYear()}, built by{" "}
-          <a href="https://notathoughtexperiment.me">
-            not a thought experiment
-          </a>
-          .
+          <hr />© {new Date().getFullYear()}, built by{" "}
+          <a href="https://github.com/alexalexyang">Alex</a>. Site repository on{" "}
+          <a href="https://github.com/alexalexyang/supermeowkat">GitHub</a>.
         </footer>
       </div>
     </>
