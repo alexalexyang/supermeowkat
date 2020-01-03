@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 export default function Artwork({ data }) {
   const post = data.markdownRemark
 
-  const urlsData = JSON.parse(post.frontmatter.urls)
+  const urlsData = JSON.parse(data.markdownRemark.frontmatter.urls)
 
   return (
     <Layout>
