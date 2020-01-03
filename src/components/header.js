@@ -42,11 +42,7 @@ const Header = ({ siteTitle }) => {
       <div id="nav-links">
         <ul>
           {edges.edges.map(node => {
-            if (
-              node.node.name !== "404" &&
-              node.node.name !== "index" &&
-              !node.node.relativeDirectory.includes("modes")
-            ) {
+            if (node.node.name !== "404" && node.node.name !== "index") {
               let item = node.node.name
               const itemCapitalised =
                 item.charAt(0).toUpperCase() + item.slice(1)

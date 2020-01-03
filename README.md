@@ -24,7 +24,7 @@ These modes can be set in src/pages/index.js. Simply comment out the modes you d
 </div>
 ```
 
-Each mode sets a different page for the landing page. These pages can be found in the directories in src/pages/modes. Edit the markdown files to change content.
+Each mode sets a different page for the landing page. These pages can be found in the directories in src/modes. Edit the markdown files to change content.
 
 # CSS
 

@@ -6,7 +6,7 @@ exports.createPages = ({ actions, graphql }) => {
   return graphql(`
     {
       pages: allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "**/src/pages/*.md" } }
+        filter: { fileAbsolutePath: { glob: "**/src/pages/*/*.md" } }
       ) {
         edges {
           node {
@@ -23,7 +23,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       exhibition: allMarkdownRemark(
         filter: {
-          fileAbsolutePath: { glob: "**/src/modes/exhibition/artists/*.md" }
+          fileAbsolutePath: { glob: "**/src/modes/exhibition/artists/*/*.md" }
         }
       ) {
         edges {
