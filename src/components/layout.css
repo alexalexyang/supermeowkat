@@ -661,3 +661,7 @@ header div ul li a {
   color: white;
   text-decoration: none;
 }
+
+.md-text {
+  text-align: justify;
+}

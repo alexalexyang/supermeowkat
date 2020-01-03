@@ -7,7 +7,10 @@ export default function Page({ data }) {
 
   return (
     <Layout>
-      <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+      <div
+        className="md-text"
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      ></div>
     </Layout>
   )
 }

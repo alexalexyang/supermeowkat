@@ -12,7 +12,10 @@ export default function Artwork({ data }) {
       <h4>
         Posted by {post.frontmatter.author} on {post.frontmatter.date}
       </h4>
-      <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+      <div
+        className="md-text"
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      ></div>
     </div>
   )
 }

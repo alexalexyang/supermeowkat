@@ -16,7 +16,12 @@ const NoExhibition = () => {
     }
   `)
 
-  return <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }}></div>
+  return (
+    <div
+      className="md-text"
+      dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
+    ></div>
+  )
 }
 
 export default NoExhibition

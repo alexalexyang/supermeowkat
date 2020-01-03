@@ -18,7 +18,10 @@ const NoExhibition = () => {
 
   return (
     <div>
-      <p dangerouslySetInnerHTML={{ __html: markdownRemark.html }}></p>
+      <p
+        className="md-text"
+        dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
+      ></p>
     </div>
   )
 }
