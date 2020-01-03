@@ -56,9 +56,7 @@ exports.createPages = ({ actions, graphql }) => {
     res.data.exhibition.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: path.resolve(
-          "src/pages/modes/exhibition/artworkTemplate.js"
-        ),
+        component: path.resolve("src/templates/artworkTemplate.js"),
       })
     })
   })

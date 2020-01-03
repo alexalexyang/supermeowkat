@@ -1,11 +1,11 @@
 import React from "react"
-import Layout from "../../../components/layout"
+import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
 export default function Artwork({ data }) {
   const post = data.markdownRemark
 
-  const urlsData = JSON.parse(data.markdownRemark.frontmatter.urls)
+  const urlsData = JSON.parse(post.frontmatter.urls)
 
   return (
     <Layout>
@@ -46,7 +46,7 @@ export default function Artwork({ data }) {
   )
 }
 
-export const ArtworkQuery = graphql`
+export const query = graphql`
   query ArtworkQuery($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
