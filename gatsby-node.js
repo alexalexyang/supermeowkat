@@ -38,6 +38,22 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+
+      blog: allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "**/src/blog/*/*.md" } }
+      ) {
+        edges {
+          node {
+            html
+            frontmatter {
+              path
+              title
+              author
+              date
+            }
+          }
+        }
+      }
     }
   `).then(res => {
     if (res.errors) {
@@ -55,6 +71,13 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: path.resolve("src/templates/artworkTemplate.js"),
+      })
+    })
+
+    res.data.blog.edges.forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: path.resolve("src/templates/blogpostTemplate.js"),
       })
     })
   })
