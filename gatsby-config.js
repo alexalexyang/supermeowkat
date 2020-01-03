@@ -25,7 +25,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `exhibitionPages`,
-        path: `${__dirname}/src/pages/modes/exhibition/artists`,
+        path: `${__dirname}/src/modes`,
       },
     },
     `gatsby-transformer-remark`,
@@ -34,8 +34,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Supermeowkat`,
+        short_name: `An online art gallery`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

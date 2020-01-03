@@ -23,9 +23,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       exhibition: allMarkdownRemark(
         filter: {
-          fileAbsolutePath: {
-            glob: "**/src/pages/modes/exhibition/artists/*.md"
-          }
+          fileAbsolutePath: { glob: "**/src/modes/exhibition/artists/*.md" }
         }
       ) {
         edges {
