@@ -38,6 +38,8 @@ Poor cows. :(
 
 Humans, why?
 
+---
+
 # What
 
 A modest online exhibition with digital works only.
@@ -52,7 +54,23 @@ Exhibition: 1 Apr - 30 Jun 2020
 
 # Where
 
-The link is not operational yet so don’t bother clicking but both open call and exhibition will be at https://supermeowkat.notathoughtexperiment.me. I’m not buying a new domain for this.
+Right here on this website.
+
+# How
+
+I will pick 12 submissions. If I even get that many.
+
+These will be displayed on a single plain webpage with your art in a column one after another. Something like this:
+
+INSERT IMAGE HERE
+
+I might make it look nicer if I have more time. Make it look less catalogue, more white cube?
+
+# Why
+
+It’s really lonely here. I have to reach out somehow. So, if we can build relationships online, we should do it. Also, cows!
+
+---
 
 # Submission requirements
 
@@ -95,6 +113,8 @@ Mail submissions to alexalexyang@gmail.com.
 - Whatever URLs you want, eg: personal website, GitHub, itch.io, Patreon, ko-fi, Behance, Mastodon, LinkedIn, etc
 - PayPal email, in case people want to encourage you with pennies but don’t count on it
 
+---
+
 # Fees
 
 None!
@@ -105,21 +125,7 @@ Also none! This is just for fun.
 
 I’ll put a PayPal button under each artwork so people can encourage the artist directly if they feel like it. I doubt they would though.
 
-# Curators
-
-I’ll curate it with a winning combination of my botched art historical training and the violence of my whims. Mainly the latter.
-
-And maybe a couple of other people. Idk.
-
-# How
-
-I will pick 12 submissions. If I even get that many.
-
-These will be displayed on a single plain webpage with your art in a column one after another. Something like this:
-
-INSERT IMAGE HERE
-
-I might make it look nicer if I have more time. Make it look less catalogue, more white cube?
+---
 
 # Outreach
 
@@ -129,20 +135,28 @@ Tell me if there are places we can submit this to in order to gain more eyeballs
 
 I’m not putting this on Facebook and Instagram because the company allows hate groups on its platforms. You can do it if you like though.
 
+---
+
+# Curators
+
+I’ll curate it with a winning combination of my botched art historical training and the violence of my whims. Mainly the latter.
+
+And maybe a couple of other people. Idk.
+
+---
+
 # What happens afterwards
 
 I’ll delete or empty the site.
 
 I’ll probably keep screenshots and the website code, and the images if artists allow it. The code will retain links to the videos but I won’t keep the videos themselves.
 
-# Why
-
-It’s really lonely here. I have to reach out somehow. So, if we can build relationships online, we should do it. Also, cows!
+---
 
 # Tech
 
-For those interested in the tech, it’ll be a markdown-focused Gatsby site with Google Analytics. It’ll be deployed to Netlify so some rate limiting applies but I’m not expecting a billion people to descend on the website anyway.
+For those interested in the tech, this is a markdown-focused Gatsby site with Google Analytics. It’ll be deployed to Netlify so some rate limiting applies but I’m not expecting a billion people to descend on the website anyway.
 
-The code will be on GitHub, free to clone/fork for your own nefarious purposes.
+The code is on [GitHub](https://github.com/alexalexyang/supermeowkat), free to clone/fork for your own nefarious purposes.
 
 I’d use only FOSS tools if I could. Not free as in beer, which I never understood. I don’t drink alcohol. Free as in I don’t have to pay a cent for it. Tell me if you know a good FOSS analytics tool.
