@@ -35,10 +35,17 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()}, built by{" "}
+          <a href="https://notathoughtexperiment.me">
+            not a thought experiment
+          </a>
+          .
         </footer>
       </div>
     </>

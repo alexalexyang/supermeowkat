@@ -1,50 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import NoExhibition from "./modes/noExhibition"
+import CallForArtworks from "./modes/callForArtworks"
 
-// const IndexPage = () => (
-//   <Layout>
-//     <SEO title="Home" />
-//     <h1>Hi people</h1>
-//     <p>Welcome to your new Gatsby site.</p>
-//     <p>Now go build something great.</p>
-//     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-//       <Image />
-//     </div>
-//     <Link to="/page-2/">Go to page 2</Link>
-//   </Layout>
-// )
+export default function IndexPage() {
+  const mode = "callForArtworks"
 
-// export default IndexPage
-
-export default function IndexPage({ data }) {
-  const post = data.markdownRemark
+  const runMode = () => {
+    if (mode === "noExhibition") return <NoExhibition />
+    if (mode === "exhibition") return "Exhibition time!"
+    if (mode === "callForArtworks") return <CallForArtworks />
+  }
 
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>{post.frontmatter.title}</h1>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+      <div>{runMode()}</div>
     </Layout>
   )
 }
-
-export const postQuery = graphql`
-  query {
-    markdownRemark(frontmatter: { path: { eq: "/" } }) {
-      html
-      frontmatter {
-        path
-        title
-        author
-        date
-      }
-    }
-  }
-`

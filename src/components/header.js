@@ -11,6 +11,7 @@ const Header = ({ siteTitle }) => {
           node {
             id
             name
+            relativeDirectory
           }
         }
       }
@@ -27,7 +28,11 @@ const Header = ({ siteTitle }) => {
       <div id="nav-links">
         <ul>
           {edges.edges.map(node => {
-            if (node.node.name !== "404" && node.node.name !== "index")
+            if (
+              node.node.name !== "404" &&
+              node.node.name !== "index" &&
+              !node.node.relativeDirectory.includes("modes")
+            )
               return (
                 <li key={node.node.id}>
                   <Link to={node.node.name}>{node.node.name}</Link>

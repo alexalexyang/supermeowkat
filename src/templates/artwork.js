@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
+import { graphql } from "gatsby"
 
 export default function Artwork({ data }) {
   const post = data.markdownRemark
@@ -8,7 +9,6 @@ export default function Artwork({ data }) {
     <div>
       <Link to="/blog">Go back</Link>
       <hr />
-      <h1>{post.frontmatter.title}</h1>
       <h4>
         Posted by {post.frontmatter.author} on {post.frontmatter.date}
       </h4>
