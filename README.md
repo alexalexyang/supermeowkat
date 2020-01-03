@@ -10,15 +10,21 @@ To make a page, create a markdown file in src/pages. The filename minus the exte
 
 Supermeowkat is built to make art world workflows easier. It has three modes:
 
-- noExhibition
-- exhibition
-- callForArtworks
+- NoExhibition
+- Exhibition
+- CallForArtworks
 
-They're in camelCase because of JavaScript convention.
+These modes can be set in src/pages/index.js. Simply comment out the modes you don't want, like so:
 
-These modes can be set in src/pages/index.js in `const mode = "callForArtworks"`. It must be a string, that is, within inverted commas.
+```
+<div>
+  {/* <NoExhibition /> */}
+  {/* <Exhibition /> */}
+  <CallForArtworks />
+</div>
+```
 
-Each mode sets a different page for the landing page. These pages can be found in the directories in src/pages/modes. To change their content, edit the markdown files.
+Each mode sets a different page for the landing page. These pages can be found in the directories in src/pages/modes. Edit the markdown files to change content.
 
 # CSS
 
