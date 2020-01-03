@@ -20,6 +20,26 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+
+      exhibition: allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: {
+            glob: "**/src/pages/modes/exhibition/artists/*.md"
+          }
+        }
+      ) {
+        edges {
+          node {
+            html
+            frontmatter {
+              path
+              title
+              artist
+              date
+            }
+          }
+        }
+      }
     }
   `).then(res => {
     if (res.errors) {
@@ -29,7 +49,16 @@ exports.createPages = ({ actions, graphql }) => {
     res.data.pages.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: path.resolve("src/templates/page.js"),
+        component: path.resolve("src/templates/pageTemplate.js"),
+      })
+    })
+
+    res.data.exhibition.edges.forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: path.resolve(
+          "src/pages/modes/exhibition/artworkTemplate.js"
+        ),
       })
     })
   })
