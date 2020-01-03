@@ -620,3 +620,44 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+header {
+  background: rebeccapurple;
+  margin-bottom: 1.45rem;
+  display: flex;
+}
+header div {
+  max-width: 960;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+header div h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+header div ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+
+header div ul li {
+  margin: 0;
+  padding: 0;
+}
+
+header div ul li a {
+  color: white;
+  text-decoration: none;
+}
