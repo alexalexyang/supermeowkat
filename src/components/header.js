@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { blogOn } from "../blog/blog"
 
 const Header = ({ siteTitle }) => {
   const { allFile: edges } = useStaticQuery(graphql`
@@ -53,6 +54,11 @@ const Header = ({ siteTitle }) => {
               )
             }
           })}
+          {blogOn ? (
+            <li>
+              <Link to="/blog">Blog</Link>
+            </li>
+          ) : null}
         </ul>
       </div>
     </header>

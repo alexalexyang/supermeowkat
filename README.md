@@ -32,8 +32,94 @@ They're all in src/components/layout.css.
 
 # Upcoming features
 
-- Exhibition mode, with PayPal integration
-- Make the site look nicer
+- PayPal integration for exhibition mode
+- Blog
+
+# How to allow graphql to read directories for markdown files
+
+First, add the directory to `plugins` in /gatsby-config. In this example, we add the blog directory:
+
+```
+{
+  resolve: `gatsby-source-filesystem`,
+  options: {
+    name: `blog`,
+    path: `${__dirname}/src/blog`,
+  },
+},
+```
+
+Second, add a named query to the graphql query in `createPages` function in /gatsby-node.js. In this example, we add a query named `blog` to a graphql query that already has a query named `pages` in it:
+
+```
+return graphql(`
+    {
+      pages: allMarkdownRemark(
+        filter: { ... }
+      ) {
+        ...
+      }
+
+      blog: allMarkdownRemark(
+        filter: { fileAbsolutePath: { glob: "**/src/blog/*/*.md" } }
+      ) {
+        edges {
+          node {
+            html
+            frontmatter {
+              path
+              title
+              author
+              date
+            }
+          }
+        }
+      }
+    }
+`)
+```
+
+In the code above, note how we filter the directory: `filter: { fileAbsolutePath: { glob: "**/src/blog/*/*.md" } }`. In particular, note how there is a wildcard directory just before the wildcard `.md` file. This allows graphql to look into all sub-directories inside the blog directory.
+
+If we leave out the wildcard directory in the code, graphql won't look into sub-directories.
+
+Third, use Gatsby's `createPage()` function to create a page for the markdown files in the chosen directory. This would be the blog directory in our example:
+
+```
+return graphql(`
+    {
+      ...
+
+      blog: allMarkdownRemark(
+        ...
+      ) {
+        ...
+    }
+  `).then(res => {
+    if (res.errors) {
+      return Promise.reject(res.errors)
+    }
+
+    res.data.pages.edges.forEach(({ node }) => {
+      createPage({...})
+    })
+
+    res.data.blog.edges.forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: path.resolve("src/templates/blogpostTemplate.js"),
+      })
+    })
+  })
+```
+
+Note how we use the name of the query to tell Gatsby which query results to make the page for: `res.data.blog.edges.forEach`. Also note how the path is set to `node.frontmatter.path`. This means your markdown file must have a `path` variable, which acts as its URL. This is how `createPage()` links path to page.
+
+Finally, create a template for the markdown files. In the code above, we have one at `src/templates/blogpostTemplate.js`.
+
+I recommend keeping templates in this directory, away from where the markdown files that use them are. I kept a template file with its markdown files once and it produced some sort of conflict that prevented Gatsby from building. It was difficult to debug.
+
+Check out the gatsby-node.js file in this project and the directories and files involved with it to get a clearer idea of the template and the markdown files.
 
 # Resources
 
