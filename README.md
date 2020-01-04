@@ -26,6 +26,12 @@ These modes can be set in src/pages/index.js. Simply comment out the modes you d
 
 Each mode sets a different page for the landing page. These pages can be found in the directories in src/modes. Edit the markdown files to change content.
 
+# Blog
+
+Activate the blog by going to src/pages/blog.js and setting `const blogOn = false` to `true`.
+
+Code in src/components/header.js will use this to add `Blog` to the navigation bar for easy access.
+
 # CSS
 
 They're all in src/components/layout.css.

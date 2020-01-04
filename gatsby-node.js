@@ -40,7 +40,7 @@ exports.createPages = ({ actions, graphql }) => {
       }
 
       blog: allMarkdownRemark(
-        filter: { fileAbsolutePath: { glob: "**/src/blog/*/*.md" } }
+        filter: { fileAbsolutePath: { glob: "**/src/blogposts/*/*.md" } }
       ) {
         edges {
           node {

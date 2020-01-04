@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { blogOn } from "../blog/blog"
+import { blogOn } from "../pages/blog"
 
 const Header = ({ siteTitle }) => {
   const { allFile: edges } = useStaticQuery(graphql`
@@ -43,7 +43,11 @@ const Header = ({ siteTitle }) => {
       <div id="nav-links">
         <ul>
           {edges.edges.map(node => {
-            if (node.node.name !== "404" && node.node.name !== "index") {
+            if (
+              node.node.name !== "404" &&
+              node.node.name !== "index" &&
+              node.node.name !== "blog"
+            ) {
               let item = node.node.name
               const itemCapitalised =
                 item.charAt(0).toUpperCase() + item.slice(1)
