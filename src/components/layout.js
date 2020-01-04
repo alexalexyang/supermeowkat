@@ -3,8 +3,11 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
+import { PayPalScript } from "./paypal"
 
 const Layout = ({ children }) => {
+  useEffect(() => PayPalScript(), [])
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

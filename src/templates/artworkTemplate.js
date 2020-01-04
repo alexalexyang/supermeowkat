@@ -4,8 +4,6 @@ import { graphql } from "gatsby"
 import { PayPalScript, PayPalButtons } from "../components/paypal"
 
 export default function Artwork({ data }) {
-  useEffect(() => PayPalScript(), [])
-
   const [showSupport, setShowSupport] = useState(false)
   const [amount, setAmount] = useState(0)
   const [supported, setSupported] = useState(false)
