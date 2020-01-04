@@ -6,7 +6,7 @@ import "./layout.css"
 import { PayPalScript } from "./paypal"
 
 const Layout = ({ children }) => {
-  useEffect(() => PayPalScript(), [])
+  PayPalScript()
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
