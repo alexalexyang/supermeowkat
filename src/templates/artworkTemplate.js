@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import { PayPalScript, PayPalButtons } from "../components/paypal"
 
 export default function Artwork({ data }) {
+  useEffect(() => PayPalScript(), [])
 
   const [showSupport, setShowSupport] = useState(false)
   const [amount, setAmount] = useState(0)
@@ -88,7 +89,7 @@ export default function Artwork({ data }) {
               <p>
                 Thank you for your support.{" "}
                 <svg
-                className="thanks"
+                  className="thanks"
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"
                   height="14"
