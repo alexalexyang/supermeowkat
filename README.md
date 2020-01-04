@@ -2,13 +2,15 @@
 
 Supermeowkat is built with Gatsby. It focuses on markdown for as many things as possible.
 
+It has three main features: pages, modes (for art), and a blog.
+
 # Pages
 
 To make a page, create a markdown file in src/pages. The filename minus the extension will automatically be added to the navigation bar.
 
 # Modes
 
-Supermeowkat is built to make art world workflows easier. It has three modes:
+Supermeowkat is built to make art world workflows easier. This part of it has three modes:
 
 - NoExhibition
 - Exhibition
@@ -32,14 +34,25 @@ Activate the blog by going to src/pages/blog.js and setting `const blogOn = fals
 
 Code in src/components/header.js will use this to add `Blog` to the navigation bar for easy access.
 
+## Blogposts
+
+Add blogposts to the src/blogposts directory.
+
+Each post should be in its own directory. I recommend naming both directory and file with the datetime of creation to help with ordering them.
+
+For example, a blogpost can look like this:
+
+<!-- Use tree to get visualisation of blogposts dir -->
+
 # CSS
 
 They're all in src/components/layout.css.
 
 # Upcoming features
 
+- Pagination for the blog
 - PayPal integration for exhibition mode
-- Blog
+- PayPal integration for general support
 
 # How to allow graphql to read directories for markdown files
 
