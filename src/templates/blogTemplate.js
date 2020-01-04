@@ -1,25 +1,39 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 export const blogOn = false
 
 function Blog({ data, pageContext }) {
   const { previousPagePath, nextPagePath } = pageContext
+
   return (
     <Layout>
       <div>
         <h1>Blog</h1>
         {data.allMarkdownRemark.edges.map(node => (
           <div>
-            <h2>
+            <p>
+              {node.node.frontmatter.featuredImage && (
+                <Img
+                  fixed={
+                    node.node.frontmatter.featuredImage.childImageSharp.fixed
+                  }
+                />
+              )}
+            </p>
+            <h2 className="blogpost-title">
               <Link to={node.node.frontmatter.path}>
                 {node.node.frontmatter.title}
               </Link>
             </h2>
-            <p>{node.node.frontmatter.date}</p>
+            <p className="blogpost-details">
+              Written {node.node.frontmatter.date} by{" "}
+              {node.node.frontmatter.author}
+            </p>
             <p>{node.node.frontmatter.excerpt}</p>
-            <hr />
+            <br />
             <br />
           </div>
         ))}
@@ -49,9 +63,16 @@ export const blogpostsQuery = graphql`
           frontmatter {
             path
             title
-            date
+            date(formatString: "YYYY-MM-DD")
             author
             excerpt
+            featuredImage {
+              childImageSharp {
+                fixed(width: 400) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
         }
       }

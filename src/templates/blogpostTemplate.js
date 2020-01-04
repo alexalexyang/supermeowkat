@@ -9,7 +9,9 @@ export default function Artwork({ data }) {
     <Layout>
       <div>
         <div>
-          <p>Posted: {post.frontmatter.date}</p>
+          <p className="blogpost-details">
+            Written {post.frontmatter.date} by {post.frontmatter.author}
+          </p>
         </div>
         <div
           className="md-text"
@@ -26,7 +28,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date
+        date(formatString: "YYYY-MM-DD")
         author
       }
     }

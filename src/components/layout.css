@@ -690,3 +690,12 @@ header div ul li a {
     -webkit-transform: rotate(360deg);
   }
 }
+
+.blogpost-details {
+  font-style: italic;
+}
+
+.blogpost-title a {
+  text-decoration: none;
+  color: rgb(85, 78, 78);
+}

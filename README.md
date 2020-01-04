@@ -8,6 +8,40 @@ It has three main features: pages, modes (for art), and a blog.
 
 To make a page, create a markdown file in src/pages. The filename minus the extension will automatically be added to the navigation bar.
 
+Image size has been constrained to a max of 1000 in the `gatsby-remark-images` plugin for `gatsby-transformer-remark` in gatsby-config.js:
+
+```
+{
+  resolve: `gatsby-remark-images`,
+  options: {
+    maxWidth: 1000,
+    linkImagesToOriginal: true,
+    loading: "lazy",
+  },
+},
+```
+
+Vides can be embedded in markdown with this syntax from the [gatsby-remark-embed-video](https://github.com/borgfriend/gatsby-remark-embed-video#usage) readme:
+
+```
+# Look at this Video:
+
+`video: https://www.youtube.com/embed/2Xc9gXyf2G4`
+`youtube: https://www.youtube.com/watch?v=2Xc9gXyf2G4`
+`youtube: 2Xc9gXyf2G4`
+
+`vimeo: https://vimeo.com/5299404`
+`vimeo: 5299404`
+
+`videoPress: https://videopress.com/v/kUJmAcSf`
+`videoPress: kUJmAcSf`
+
+`twitch: https://player.twitch.tv/?channel=dakotaz`
+`twitch: https://player.twitch.tv/?autoplay=false&video=v273436948`
+`twitch: 273436948`
+`twitchLive: dakotaz`
+```
+
 # Modes
 
 Supermeowkat is built to make art world workflows easier. This part of it has three modes:
@@ -52,7 +86,6 @@ They're all in src/components/layout.css.
 
 - PayPal integration for exhibition mode
 - PayPal integration for general support
--
 - Search function for content on site
 - Refine SEO features
 - Path prefixes like /blog and /art although I've no idea how to do this because the usual `onCreateNode` doesn't expose the right APIs to grab posts from directories
@@ -149,7 +182,7 @@ Check out the gatsby-node.js file in this project and the directories and files 
 
 # Blog pagination
 
-It's handled by gatsby-awesome-pagination. Relevant code is this in gatsby-node.js:
+It's handled by gatsby-awesome-pagination. Change the items per page in this code in gatsby-node.js:
 
 ```
 const blogposts = res.data.blogposts.edges

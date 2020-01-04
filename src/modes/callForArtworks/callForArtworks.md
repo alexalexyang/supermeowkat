@@ -62,7 +62,7 @@ I will pick 12 submissions. If I even get that many.
 
 These will be displayed on a single plain webpage with your art in a column one after another. Something like this:
 
-INSERT IMAGE HERE
+![Sample artwork page](sample_artwork_page.png)
 
 I might make it look nicer if I have more time. Make it look less catalogue, more white cube?
 
