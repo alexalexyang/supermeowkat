@@ -2,6 +2,7 @@ import React from "react"
 
 export const PayPalScript = () => {
   const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID
+  console.log("PPCID:", PAYPAL_CLIENT_ID)
 
   const script = document.createElement("script")
   script.type = "text/javascript"
