@@ -34,7 +34,7 @@ export default function Artwork({ data }) {
             </li>
             <li className="artwork-list-item">
               {/* PayPal: {post.frontmatter.paypal} */}
-              <Support />
+              <Support buttonText="Support the artist" />
             </li>
           </ul>
         </div>

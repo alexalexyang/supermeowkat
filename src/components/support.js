@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { PayPalButtons } from "../components/paypal"
 
-export default function Support() {
+export default function Support({ buttonText }) {
   const [showSupport, setShowSupport] = useState(false)
   const [amount, setAmount] = useState(0)
   const [supported, setSupported] = useState(false)
@@ -13,7 +13,7 @@ export default function Support() {
   const supportButton = () => {
     return (
       <button id="support" onClick={() => setShowSupport(true)}>
-        Support the artist
+        {buttonText}
       </button>
     )
   }

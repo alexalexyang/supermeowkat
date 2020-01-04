@@ -712,3 +712,8 @@ header div ul li a {
     -webkit-transform: rotateY(0deg);
   }
 }
+
+.centre {
+  display: flex;
+  justify-content: center;
+}
