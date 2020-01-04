@@ -84,7 +84,7 @@ They're all in src/components/layout.css.
 
 # Upcoming features
 
-- PayPal integration for exhibition mode
+- Tidy up PayPal integration for exhibition mode
 - PayPal integration for general support
 - Search function for content on site
 - Refine SEO features
@@ -204,3 +204,7 @@ Inside `pageContext` destructured from props are `previousPagePath` and `nextPag
 [Using multiple queries or entries on gatsbyjs createPages Node API](https://swas.io/blog/using-multiple-queries-on-gatsbyjs-createpages-node-api/)
 
 [How do i create pages with multiple templates](https://spectrum.chat/gatsby-js/general/how-do-i-create-pages-with-multiple-templates~cd82ebe3-0d3b-4ce5-8f6a-193353d0867f)
+
+[Use Paypal script in component rather than in script tag.](https://stackoverflow.com/questions/57470064/is-there-a-way-to-put-a-paypal-script-tag-inside-a-button-using-reactjs)
+
+[Add custom payee](https://developer.paypal.com/docs/checkout/integration-features/custom-payee/)

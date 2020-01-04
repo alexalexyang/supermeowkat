@@ -1,8 +1,17 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import { PayPalScript, PayPalButtons } from "../components/paypal"
 
 export default function Artwork({ data }) {
+  // PayPalScript()
+  // useEffect(() => PayPalButtons(10), [])
+  // console.log(window.paypal)
+
+  const runPayPal = () => {
+    PayPalButtons(10)
+  }
+
   const post = data.markdownRemark
 
   const urlsData = JSON.parse(post.frontmatter.urls)
@@ -33,7 +42,9 @@ export default function Artwork({ data }) {
               ))}
             </li>
             <li className="artwork-list-item">
-              PayPal: {post.frontmatter.paypal}
+              <div className="container" id="paypal-button-container"></div>
+              {/* PayPal: {post.frontmatter.paypal} */}
+              <p onClick={() => runPayPal()}>Support</p>
             </li>
           </ul>
         </div>
