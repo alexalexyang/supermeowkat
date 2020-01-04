@@ -699,3 +699,16 @@ header div ul li a {
   text-decoration: none;
   color: rgb(85, 78, 78);
 }
+
+.thanks {
+  animation: spin 5s ease-in-out infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateY(360deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0deg);
+  }
+}

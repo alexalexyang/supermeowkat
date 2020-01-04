@@ -1,3 +1,5 @@
+import React from "react"
+
 export const PayPalScript = () => {
   const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID
 
@@ -8,12 +10,12 @@ export const PayPalScript = () => {
   script.onerror = () => {
     throw new Error("Paypal SDK could not be loaded.")
   }
-  script.onload = () => console.log("Connected to Paypal.")
+  //   script.onload = () => console.log("Connected to Paypal.")
 
   document.head.appendChild(script)
 }
 
-export const PayPalButtons = price => {
+export const PayPalButtons = (price, setSupported) => {
   window.paypal
     .Buttons({
       createOrder: function(data, actions) {
@@ -34,6 +36,7 @@ export const PayPalButtons = price => {
       onApprove: async (data, actions) => {
         const order = await actions.order.capture()
         console.log(order)
+        setSupported(true)
       },
       onError: err => {
         console.log(err)
