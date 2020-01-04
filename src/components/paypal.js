@@ -2,7 +2,6 @@ import React from "react"
 
 export const PayPalScript = () => {
   const PAYPAL_CLIENT_ID = process.env.GATSBY_PAYPAL_CLIENT_ID
-  console.log("PPCID:", PAYPAL_CLIENT_ID)
 
   const script = document.createElement("script")
   script.type = "text/javascript"
@@ -36,7 +35,7 @@ export const PayPalButtons = (price, setSupported) => {
       },
       onApprove: async (data, actions) => {
         const order = await actions.order.capture()
-        console.log(order)
+        // console.log(order)
         setSupported(true)
       },
       onError: err => {
