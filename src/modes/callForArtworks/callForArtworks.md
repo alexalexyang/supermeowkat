@@ -68,7 +68,13 @@ I might make it look nicer if I have more time. Make it look less catalogue, mor
 
 # Why
 
-It’s really lonely here. I have to reach out somehow. So, if we can build relationships online, we should do it. Also, cows!
+It’s really lonely here. I have to reach out somehow. So, if we can build relationships online, we should do it.
+
+And, it's a nice exercise to see how far we can push this, especially if people send in code art. Just coding this website with Gatsby alone showed me how to embed videos in markdown, which can't be done with pure markdown. Pretty cool.
+
+Also, cows!
+
+![Cow massage](cow.gif)
 
 ---
 
@@ -98,7 +104,7 @@ Mail submissions to alexalexyang@gmail.com.
   - Send me an image and the URL
 - Code:
   - This site is written with Gatsby, so if your artwork involves JavaScript, it might be possible. No guarantees but we should discuss this.
-  - Jupyter notebooks might be possible? I’d have to check.
+  - Jupyter notebooks are possible thanks to [gatsby-transformer-ipynb](https://www.gatsbyjs.org/packages/@gatsby-contrib/gatsby-transformer-ipynb/), so, send in statistics art or whatevs
   - I don’t know about other languages for now. Maybe in future with WebAssembly.
 - Website:
   - Send me image and URL
