@@ -1,4 +1,5 @@
 const path = require("path")
+const { paginate } = require("gatsby-awesome-pagination")
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -39,7 +40,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
 
-      blog: allMarkdownRemark(
+      blogposts: allMarkdownRemark(
         filter: { fileAbsolutePath: { glob: "**/src/blogposts/*/*.md" } }
       ) {
         edges {
@@ -74,11 +75,21 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
 
-    res.data.blog.edges.forEach(({ node }) => {
+    res.data.blogposts.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
         component: path.resolve("src/templates/blogpostTemplate.js"),
       })
+    })
+
+    // Create paginated blog list page
+    const blogposts = res.data.blogposts.edges
+    paginate({
+      createPage,
+      items: blogposts,
+      itemsPerPage: 3,
+      pathPrefix: "/blog",
+      component: path.resolve("src/templates/blogTemplate.js"),
     })
   })
 }

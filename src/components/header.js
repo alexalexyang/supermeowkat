@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { blogOn } from "../pages/blog"
+import { blogOn } from "../templates/blogTemplate"
 
 const Header = ({ siteTitle }) => {
   const { allFile: edges } = useStaticQuery(graphql`

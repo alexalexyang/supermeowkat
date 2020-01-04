@@ -1,14 +1,15 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "./src/components/layout"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
-export const blogOn = false
+export const blogOn = true
 
 function Blog() {
   const blogposts = useStaticQuery(graphql`
     query blogpostsQuery {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { glob: "**/src/blogposts/*/*.md" } }
+        sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
           node {
@@ -25,6 +26,8 @@ function Blog() {
       }
     }
   `)
+
+  console.log(blogposts)
 
   return (
     <Layout>

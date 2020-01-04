@@ -50,9 +50,16 @@ They're all in src/components/layout.css.
 
 # Upcoming features
 
-- Pagination for the blog
 - PayPal integration for exhibition mode
 - PayPal integration for general support
+-
+- Search function for content on site
+- Refine SEO features
+- Path prefixes like /blog and /art although I've no idea how to do this because the usual `onCreateNode` doesn't expose the right APIs to grab posts from directories
+
+# For developers
+
+The following sections are for developers. Skip them if you're a content creator.
 
 # How to allow graphql to read directories for markdown files
 
@@ -139,6 +146,25 @@ Finally, create a template for the markdown files. In the code above, we have on
 I recommend keeping templates in this directory, away from where the markdown files that use them are. I kept a template file with its markdown files once and it produced some sort of conflict that prevented Gatsby from building. It was difficult to debug.
 
 Check out the gatsby-node.js file in this project and the directories and files involved with it to get a clearer idea of the template and the markdown files.
+
+# Blog pagination
+
+It's handled by gatsby-awesome-pagination. Relevant code is this in gatsby-node.js:
+
+```
+const blogposts = res.data.blogposts.edges
+    paginate({
+      createPage,
+      items: blogposts,
+      itemsPerPage: 3,
+      pathPrefix: "/blog",
+      component: path.resolve("src/templates/blogTemplate.js"),
+    })
+```
+
+It passes data to props and the graphql query in src/templates/blogTemplate, which is the page that lists all the blog posts.
+
+Inside `pageContext` destructured from props are `previousPagePath` and `nextPagePath`. These are used to create the `Previous` and `Next` buttons.
 
 # Resources
 
