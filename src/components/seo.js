@@ -40,7 +40,7 @@ function SEO({ description, lang, meta, title, image }) {
     description: description || data.description,
     author: data.author,
     url: data.url,
-    image: image || node.publicURL,
+    image: image || `${data.url}${node.publicURL}`,
   }
 
   return (
