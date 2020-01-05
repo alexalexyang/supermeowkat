@@ -200,10 +200,20 @@ Inside `pageContext` destructured from props are `previousPagePath` and `nextPag
 
 # Resources
 
+## Create different pages
+
 [Using multiple queries or entries on gatsbyjs createPages Node API](https://swas.io/blog/using-multiple-queries-on-gatsbyjs-createpages-node-api/)
 
 [How do i create pages with multiple templates](https://spectrum.chat/gatsby-js/general/how-do-i-create-pages-with-multiple-templates~cd82ebe3-0d3b-4ce5-8f6a-193353d0867f)
 
+## PayPal
+
 [Use Paypal script in component rather than in script tag.](https://stackoverflow.com/questions/57470064/is-there-a-way-to-put-a-paypal-script-tag-inside-a-button-using-reactjs)
 
 [Add custom payee](https://developer.paypal.com/docs/checkout/integration-features/custom-payee/)
+
+## Google Analytics
+
+[Send custom click events to GA](https://stackoverflow.com/questions/56943144/how-use-gatsby-plugin-google-gtag-with-gatsby-js)
+
+[gatsby-plugin-google-gtag repo](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-gtag)
