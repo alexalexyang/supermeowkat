@@ -1,24 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import Support from "../components/support"
+import SupportSupermeowkat from "../components/supportSupermeowkat"
 import SEO from "../components/seo"
 
 export default function Page({ data }) {
   const post = data.markdownRemark
-
-  const supportSupermeowkat = () => (
-    <div>
-      <div>
-        <p>
-          If you like Supermeowkat, please appreciate us with cold hard cash:
-        </p>
-      </div>
-      <div className="centre">
-        <Support buttonText="Support Supermeowkat" />
-      </div>
-    </div>
-  )
 
   return (
     <Layout>
@@ -30,9 +17,9 @@ export default function Page({ data }) {
         className="md-text"
         dangerouslySetInnerHTML={{ __html: post.html }}
       ></div>
-      {data.markdownRemark.frontmatter.path === "/about"
-        ? supportSupermeowkat()
-        : null}
+      {data.markdownRemark.frontmatter.path === "/about" ? (
+        <SupportSupermeowkat />
+      ) : null}
     </Layout>
   )
 }

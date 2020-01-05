@@ -1,21 +1,8 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import Support from "../../components/support"
+import supportSupermeowkat from "../../components/supportSupermeowkat"
 
 export default function Exhibition() {
-  const supportSupermeowkat = () => (
-    <div>
-      <div>
-        <p>
-          If you like Supermeowkat, please appreciate us with cold hard cash:
-        </p>
-      </div>
-      <div className="centre">
-        <Support buttonText="Support Supermeowkat" />
-      </div>
-    </div>
-  )
-
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark(
@@ -74,7 +61,7 @@ export default function Exhibition() {
           </div>
         ))}
       </div>
-      {supportSupermeowkat()}
+      <SupportSupermeowkat />
     </div>
   )
 }
