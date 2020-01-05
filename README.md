@@ -62,6 +62,35 @@ These modes can be set in src/pages/index.js. Simply comment out the modes you d
 
 Each mode sets a different page for the landing page. These pages can be found in the directories in src/modes. Edit the markdown files to change content.
 
+## Exhibition mode
+
+Each artist must have their own directory in src/modes/exhibition/artists/artist-name.
+
+Each artist directory should contain a markdown file and the artist's work. The markdown file should look like this:
+
+```
+mode: exhibition
+path: /ollie-lee
+artist: Ollie Lee
+title: When the Winter Skies are Red
+medium: image
+artworkURI: /#
+urls: '{ "Github": "https://github.com/#", "LinkedIn": "linkedin.com/#" }'
+paypal: ollie@###.###
+---
+
+`urls` must be a string.
+
+## Artist statement
+
+It's a beautiful picture of a burning world.
+
+## Curator statement
+
+Yeah, it's pretty good.
+
+```
+
 # Blog
 
 Activate the blog by going to src/pages/blog.js and setting `const blogOn = false` to `true`.
@@ -141,9 +170,9 @@ They're all in src/components/layout.css.
 
 # Upcoming features
 
-- Google Analytics
-- Search function for content on site
 - Refine SEO features
+- Fix artwork portion of artwork page
+- Search function for content on site
 - Path prefixes like /blog and /art although I've no idea how to do this because the usual `onCreateNode` doesn't expose the right APIs to grab posts from directories
 
 # For developers

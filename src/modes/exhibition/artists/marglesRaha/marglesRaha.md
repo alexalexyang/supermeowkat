@@ -1,12 +1,12 @@
 ---
-mode: "exhibition"
-path: "/margles-raha"
-artist: "Margles Raha"
-title: "Safari of Sloven Sins"
-medium: "video"
-artworkURI: "/#"
+mode: exhibition
+path: /margles-raha
+artist: Margles Raha
+title: Safari of Sloven Sins
+medium: video
+artworkURI: /#
 urls: '{ "Github": "https://github.com/#", "LinkedIn": "linkedin.com/#" }'
-paypal: "margles.raha@###.###"
+paypal: margles.raha@###.###
 ---
 
 ## Artist statement

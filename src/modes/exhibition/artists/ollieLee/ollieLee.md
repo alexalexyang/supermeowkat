@@ -1,12 +1,12 @@
 ---
-mode: "exhibition"
-path: "/ollie-lee"
-artist: "Ollie Lee"
-title: "When the Winter Skies are Red"
-medium: "image"
-artworkURI: "/#"
+mode: exhibition
+path: /ollie-lee
+artist: Ollie Lee
+title: When the Winter Skies are Red
+medium: image
+artworkURI: /#
 urls: '{ "Github": "https://github.com/#", "LinkedIn": "linkedin.com/#" }'
-paypal: "ollie@###.###"
+paypal: ollie@###.###
 ---
 
 ## Artist statement
