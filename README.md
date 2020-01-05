@@ -111,6 +111,30 @@ src/blogposts/2020-01-01-1635-why-i-like-pots
 └── lots_of_pots.jpg
 ```
 
+# Google Analytics
+
+This is the plugin in use: [gatsby-plugin-google-gtag repo](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-gtag).
+
+Place your tracking ID in gatsby-config.js:
+
+```
+plugins: [
+  {
+    resolve: `gatsby-plugin-google-gtag`,
+    options: {
+      trackingIds: ["YOUR_TRACKING_ID"],
+      gtagConfig: {
+        anonymize_ip: true,
+        cookie_expires: 0,
+      },
+  ...
+]
+```
+
+You can put in other Google tracking products here too.
+
+I do not recommend Google because the company has become a huge privacy concern and it is also anti-labour. But tracking is needed for contemporary digital life and I haven't found a better FOSS alternative. Let me know if you've found one.
+
 # CSS
 
 They're all in src/components/layout.css.
@@ -248,5 +272,3 @@ Inside `pageContext` destructured from props are `previousPagePath` and `nextPag
 ## Google Analytics
 
 [Send custom click events to GA](https://stackoverflow.com/questions/56943144/how-use-gatsby-plugin-google-gtag-with-gatsby-js)
-
-[gatsby-plugin-google-gtag repo](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-google-gtag)
