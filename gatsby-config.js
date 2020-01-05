@@ -8,7 +8,7 @@ module.exports = {
     titleTemplate: `%s · An online art gallery`,
     description: `Supermeowkat is an online art gallery exploring bits and pieces and the corners and edges of digital art just for the heck of it.`,
     url: `https://supermeowkat.notathoughtexperiment.me`,
-    image: `src/images/nyancat.gif`,
+    image: `static/nyancat.gif`,
     author: `Alex | not a thought experiment`,
   },
   plugins: [
