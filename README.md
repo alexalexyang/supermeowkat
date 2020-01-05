@@ -84,8 +84,7 @@ They're all in src/components/layout.css.
 
 # Upcoming features
 
-- Tidy up PayPal integration for exhibition mode
-- PayPal integration for general support
+- Google Analytics
 - Search function for content on site
 - Refine SEO features
 - Path prefixes like /blog and /art although I've no idea how to do this because the usual `onCreateNode` doesn't expose the right APIs to grab posts from directories
