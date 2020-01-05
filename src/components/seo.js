@@ -32,6 +32,7 @@ function SEO({ description, lang, meta, title, image }) {
 
   const { siteMetadata: data } = site
   const { node } = allFile.edges[0]
+  console.log(node.publicURL)
 
   const seo = {
     title: title || data.title,
