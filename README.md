@@ -171,6 +171,7 @@ They're all in src/components/layout.css.
 # Upcoming features
 
 - Fix artwork portion of exhibition artwork pages
+- Handle images for SEO, ie, for social media posts
 - Search function for content on site
 - Path prefixes like /blog and /art although I've no idea how to do this because the usual `onCreateNode` doesn't expose the right APIs to grab posts from directories
 
