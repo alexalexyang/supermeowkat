@@ -19,7 +19,7 @@ module.exports = {
         },
         pluginConfig: {
           // Puts tracking script in the head instead of the body
-          head: false,
+          head: true,
           respectDNT: true,
           // Avoids sending pageview hits from custom paths
           exclude: ["/preview/**", "/do-not-track/me/too/"],
