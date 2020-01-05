@@ -72,11 +72,44 @@ Code in src/components/header.js will use this to add `Blog` to the navigation b
 
 Add blogposts to the src/blogposts directory.
 
-Each post should be in its own directory. I recommend naming both directory and file with the datetime of creation to help with ordering them.
+Each post should be in its own directory. Each markdown file should look like this:
+
+```
+---
+path: /2020-01-01-all-about-bugs
+title: Bugs are great
+date: 2020-01-01
+author: Saucy Lagoon
+excerpt: In this post I talk about bugs
+featuredImage: ./bugs.jpg
+---
+
+# Bugs are great
+
+Bug are so great. I hug them all the time.
+
+![Parasitic wasp](wasp.png)
+```
+
+The portion enclosed by `---` is called the frontmatter. It contains metadata:
+
+- `path` is the url, AKA slug, where your post lives
+- `date` is what Gatsby uses to order your posts in descending order
+- `excerpt` is supposed to be a synopsis shown on the blog list page
+- `featuredImage` is displayed on the blog list page with your post
+
+Your markdown content comes after `---`. This will be converted to HTML automatically.
+
+You can name your blogpost directories and files however you like. I recommend naming them with the date, time, and a brief title to help you find them more easily in future.
 
 For example, a blogpost can look like this:
 
-<!-- Use tree to get visualisation of blogposts dir -->
+```
+src/blogposts/2020-01-01-1635-why-i-like-pots
+├── 2020-01-01-1635-why-i-like-pots.md
+└── bunnies.gif
+└── lots_of_pots.jpg
+```
 
 # CSS
 
