@@ -1,7 +1,8 @@
-import React, { useState } from "react"
-import Layout from "../components/layout"
+import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 import Support from "../components/support"
+import SEO from "../components/seo"
 
 export default function Artwork({ data }) {
   const post = data.markdownRemark
@@ -9,6 +10,10 @@ export default function Artwork({ data }) {
 
   return (
     <Layout>
+      <SEO
+        title={post.frontmatter.artist}
+        description={post.frontmatter.excerpt}
+      />
       <div>
         <div>
           <p>Artwork will be here using {post.frontmatter.artworkURI}.</p>
@@ -60,6 +65,7 @@ export const query = graphql`
         medium
         artworkURI
         paypal
+        excerpt
       }
     }
   }

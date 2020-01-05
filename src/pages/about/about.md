@@ -1,8 +1,9 @@
 ---
-path: "/about"
-date: "2020-02-03"
-title: "About Supermeowkat"
-author: "Alex"
+path: /about
+date: 2020-02-03
+title: About
+author: Alex
+excerpt: Supermeowkat is an online art gallery I invented in the last days of 2019.
 ---
 
 # About

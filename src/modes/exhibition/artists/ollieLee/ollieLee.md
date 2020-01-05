@@ -7,6 +7,7 @@ medium: image
 artworkURI: /#
 urls: '{ "Github": "https://github.com/#", "LinkedIn": "linkedin.com/#" }'
 paypal: ollie@###.###
+excerpt: Artpiece is nice.
 ---
 
 ## Artist statement

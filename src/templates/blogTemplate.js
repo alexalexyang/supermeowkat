@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
+import SEO from "../components/seo"
 
 export const blogOn = false
 
@@ -10,31 +11,35 @@ function Blog({ data, pageContext }) {
 
   return (
     <Layout>
+      <SEO title="Blog" description="Supermeowkat says meoooowww." />
       <div>
         <h1>Blog</h1>
         {data.allMarkdownRemark.edges.map(node => (
-          <div>
-            <p>
-              {node.node.frontmatter.featuredImage && (
-                <Img
-                  fixed={
-                    node.node.frontmatter.featuredImage.childImageSharp.fixed
-                  }
-                />
-              )}
-            </p>
-            <h2 className="blogpost-title">
-              <Link to={node.node.frontmatter.path}>
-                {node.node.frontmatter.title}
-              </Link>
-            </h2>
-            <p className="blogpost-details">
-              Written {node.node.frontmatter.date} by{" "}
-              {node.node.frontmatter.author}
-            </p>
-            <p>{node.node.frontmatter.excerpt}</p>
-            <br />
-            <br />
+          <div key={node.node.id}>
+            <div className="bloglist-card">
+              <div className="bloglist-blogpost-image">
+                {node.node.frontmatter.featuredImage && (
+                  <Img
+                    fixed={
+                      node.node.frontmatter.featuredImage.childImageSharp.fixed
+                    }
+                  />
+                )}
+              </div>
+              <div className="bloglist-blogpost-details">
+                <h2 className="blogpost-title">
+                  <Link to={node.node.frontmatter.path}>
+                    {node.node.frontmatter.title}
+                  </Link>
+                </h2>
+                <p className="blogpost-details">
+                  Written {node.node.frontmatter.date} by{" "}
+                  {node.node.frontmatter.author}
+                </p>
+                <p>{node.node.frontmatter.excerpt}</p>
+              </div>
+            </div>
+            <hr />
           </div>
         ))}
 

@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { blogOn } from "../templates/blogTemplate"
 
 const Header = ({ siteTitle }) => {
-  const { allFile: edges } = useStaticQuery(graphql`
+  const { allFile } = useStaticQuery(graphql`
     query {
       allFile(filter: { sourceInstanceName: { eq: "pages" } }) {
         edges {
@@ -42,7 +42,7 @@ const Header = ({ siteTitle }) => {
       </div>
       <div id="nav-links">
         <ul>
-          {edges.edges.map(node => {
+          {allFile.edges.map(node => {
             if (
               node.node.name !== "404" &&
               node.node.name !== "index" &&
@@ -53,10 +53,11 @@ const Header = ({ siteTitle }) => {
                 item.charAt(0).toUpperCase() + item.slice(1)
               return (
                 <li key={node.node.id}>
-                  <Link to={node.node.name}>{itemCapitalised}</Link>
+                  <Link to={`/${node.node.name}`}>{itemCapitalised}</Link>
                 </li>
               )
             }
+            return null
           })}
           {blogOn ? (
             <li>

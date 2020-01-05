@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Support from "../components/support"
+import SEO from "../components/seo"
 
 export default function Page({ data }) {
   const post = data.markdownRemark
@@ -21,6 +22,10 @@ export default function Page({ data }) {
 
   return (
     <Layout>
+      <SEO
+        title={data.markdownRemark.frontmatter.title}
+        description={data.markdownRemark.frontmatter.excerpt}
+      />
       <div
         className="md-text"
         dangerouslySetInnerHTML={{ __html: post.html }}
@@ -41,6 +46,7 @@ export const postQuery = graphql`
         title
         author
         date
+        excerpt
       }
     }
   }

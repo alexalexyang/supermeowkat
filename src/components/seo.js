@@ -17,7 +17,11 @@ function SEO({ description, lang, meta, title }) {
         site {
           siteMetadata {
             title
+            titleTemplate
             description
+            author
+            url
+            image
             author
           }
         }
@@ -25,7 +29,16 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const { siteMetadata: data } = site
+
+  const seo = {
+    title: title || data.title,
+    titleTemplate: data.titleTemplate,
+    description: description || data.description,
+    author: data.author,
+    url: data.url,
+    image: data.image,
+  }
 
   return (
     <Helmet
@@ -33,19 +46,23 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`${seo.titleTemplate}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: seo.description,
         },
         {
           property: `og:title`,
-          content: title,
+          content: seo.title,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: seo.description,
+        },
+        {
+          property: `og:image`,
+          content: seo.image,
         },
         {
           property: `og:type`,
@@ -57,15 +74,19 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: seo.author,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: seo.title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: seo.description,
+        },
+        {
+          name: `twitter:image`,
+          content: seo.image,
         },
       ].concat(meta)}
     />
@@ -76,6 +97,10 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  title: ``,
+  author: ``,
+  url: ``,
+  image: ``,
 }
 
 SEO.propTypes = {
@@ -83,6 +108,9 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  author: PropTypes.string,
+  url: PropTypes.string,
+  image: PropTypes.string,
 }
 
 export default SEO

@@ -1,12 +1,17 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import SEO from "../components/seo"
 
 export default function Artwork({ data }) {
   const post = data.markdownRemark
 
   return (
     <Layout>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.excerpt}
+      />
       <div>
         <div>
           <p className="blogpost-details">
@@ -30,6 +35,7 @@ export const query = graphql`
         title
         date(formatString: "YYYY-MM-DD")
         author
+        excerpt
       }
     }
   }

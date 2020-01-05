@@ -619,6 +619,10 @@ pre tt:after {
   }
 }
 
+hr {
+  background: #f0cbcb;
+}
+
 header {
   background: rgb(199, 185, 185, 0.8);
   margin-bottom: 1.45rem;
@@ -689,6 +693,18 @@ header div ul li a {
   to {
     -webkit-transform: rotate(360deg);
   }
+}
+
+.bloglist-card {
+  margin: 30px 0px 30px 0px;
+}
+
+.bloglist-card h2 {
+  margin: 10px 0 10px 0;
+}
+
+.bloglist-card p {
+  margin: 15px 0 15px 0;
 }
 
 .blogpost-details {

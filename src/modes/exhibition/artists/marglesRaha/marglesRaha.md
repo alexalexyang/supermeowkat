@@ -7,6 +7,7 @@ medium: video
 artworkURI: /#
 urls: '{ "Github": "https://github.com/#", "LinkedIn": "linkedin.com/#" }'
 paypal: margles.raha@###.###
+excerpt: Yay for art.
 ---
 
 ## Artist statement

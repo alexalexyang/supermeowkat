@@ -5,7 +5,10 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Supermeowkat`,
-    description: `An online art gallery`,
+    titleTemplate: `%s · An online art gallery`,
+    description: `Supermeowkat is an online art gallery exploring bits and pieces and the corners and edges of digital art just for the heck of it.`,
+    url: `https://supermeowkat.notathoughtexperiment.me`,
+    image: `/images/nyancat.gif`,
     author: `Alex | not a thought experiment`,
   },
   plugins: [
@@ -93,7 +96,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/tabcat.svg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
