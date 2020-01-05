@@ -12,7 +12,7 @@ Supermeowkat is an online art gallery I invented in the last days of 2019. I’v
 
 Yeah, Supermeowkat is just [Alex](https://github.com/alexalexyang) right now, despite salting these paragraphs with the pronoun "We". Maybe there'll be more folks in future. Who knows, maybe it'll transform into a citizen data science thing one day. The future is an enigma wrapped in a Schrodinger's sandwich shrouded by equal parts dream and hellfire. Nobody knows anything about it.
 
-Supermeowkat does not claim to be anything like professional. I'm just winging it. Heck, I banged out the call for artworks in one day and coded this site in a little under three with no peer reviews or testing.
+Supermeowkat does not claim to be anything like professional. I'm just winging it. Heck, I banged out the call for artworks in one day and coded this site in a little under three with almost no peer reviews or testing.
 
 Nonetheless, send in your artworks if you like what you read in the Call for Artworks. We're excited to see what shows up, if any at all.
 
