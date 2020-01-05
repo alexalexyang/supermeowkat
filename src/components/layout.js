@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import { PayPalScript } from "./paypal"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Layout = ({ children }) => {
   useEffect(() => PayPalScript(), [])
@@ -36,7 +37,11 @@ const Layout = ({ children }) => {
         <br />
         <footer>
           <hr />© {new Date().getFullYear()}, built by{" "}
-          <a href="https://github.com/alexalexyang">Alex</a>. Site repository on{" "}
+          {/* <a href="https://github.com/alexalexyang">Alex</a>. */}
+          <OutboundLink href="https://github.com/alexalexyang">
+            Alex
+          </OutboundLink>
+          . Site repo on{" "}
           <a href="https://github.com/alexalexyang/supermeowkat">GitHub</a>.
         </footer>
       </div>
