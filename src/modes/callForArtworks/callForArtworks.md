@@ -74,7 +74,7 @@ And, it's a nice exercise to see how far we can push this, especially if people 
 
 Also, cows!
 
-![Cow massage](cow.gif)
+![Cow massage](moo.jpg)
 
 ---
 
