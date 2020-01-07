@@ -12,4 +12,4 @@ Feel free to drop us an [email](mailto:alexalexyang@gmail.com).
 
 ## Mailing list
 
-You're also welcome to sign up for our mailing list. We'll text you only when we have an exhibition.
+You're also welcome to sign up for our mailing list. We'll text you only when we have an exhibition or calls for artwork.
