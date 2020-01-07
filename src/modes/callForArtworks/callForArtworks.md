@@ -85,7 +85,7 @@ Mail submissions to alexalexyang@gmail.com.
 ## General requirements
 
 - Must be related to themes you can glean from the description above
-- Ideally should involve cows somehow or udder
+- Ideally should involve cows somehow or udder, although I'll take a somewhat relaxed approach to this
 - Only digital materials
 - Write a description for it
 - Textual requirements like description and your details should be sent in your email body or in a doc, odt, or txt file from which it can be easily copied. Do NOT send them in a PDF. It often prevents easy copy-pasting.
