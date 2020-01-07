@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import SupportSupermeowkat from "../components/supportSupermeowkat"
 import SEO from "../components/seo"
 import Mailchimp from "../components/mailchimp"
+import siteData from "../../site-config"
 
 export default function Page({ data }) {
   const post = data.markdownRemark
@@ -18,12 +19,11 @@ export default function Page({ data }) {
         className="md-text"
         dangerouslySetInnerHTML={{ __html: post.html }}
       ></div>
-      {data.markdownRemark.frontmatter.path === "/about" ? (
+      {data.markdownRemark.frontmatter.path === "/about" && (
         <SupportSupermeowkat />
-      ) : null}
-      {data.markdownRemark.frontmatter.path === "/contact" ? (
-        <Mailchimp />
-      ) : null}
+      )}
+      {data.markdownRemark.frontmatter.path === "/contact" &&
+        siteData.mailchimp && <Mailchimp />}
     </Layout>
   )
 }

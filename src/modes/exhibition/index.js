@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import supportSupermeowkat from "../../components/supportSupermeowkat"
+import SupportSupermeowkat from "../../components/supportSupermeowkat"
 
 export default function Exhibition() {
   const data = useStaticQuery(graphql`

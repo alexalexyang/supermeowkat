@@ -4,8 +4,6 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 
-export const blogOn = false
-
 function Blog({ data, pageContext }) {
   const { previousPagePath, nextPagePath } = pageContext
 

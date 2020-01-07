@@ -52,15 +52,7 @@ Supermeowkat is built to make art world workflows easier. This part of it has th
 - Exhibition
 - CallForArtworks
 
-These modes can be set in src/pages/index.js. Simply comment out the modes you don't want, like so:
-
-```
-<div>
-  {/* <NoExhibition /> */}
-  {/* <Exhibition /> */}
-  <CallForArtworks />
-</div>
-```
+These modes can be set in site-config.js. Set the one you want to `true` and the rest to `false`.
 
 Each mode sets a different page for the landing page. These pages can be found in the directories in src/modes. Edit the markdown files to change content.
 
@@ -95,7 +87,7 @@ Yeah, it's pretty good.
 
 # Blog
 
-Activate the blog by going to src/pages/blog.js and setting `const blogOn = false` to `true`.
+Activate the blog by going to site-config and setting `blog` to `true`.
 
 Code in src/components/header.js will use this to add `Blog` to the navigation bar for easy access.
 
@@ -172,9 +164,8 @@ They're all in src/components/layout.css.
 
 # Upcoming features
 
-- Add lazy loading
 - Fix artwork portion of exhibition artwork pages
-- Handle images for SEO, ie, for social media posts, [link](https://github.com/gatsbyjs/gatsby/issues/13359)
+- Handle images for SEO, ie, for social media posts, using publicURL [link](https://github.com/gatsbyjs/gatsby/issues/13359)
 - Finally add /blog and /exhibition path prefixes? [Configuring pages with matchPath](https://www.gatsbyjs.org/docs/client-only-routes-and-user-authentication/#configuring-pages-with-matchpath)
 - Add config file to turn on things like about and contact page, and also mailchimp
 - Search function for content on site
