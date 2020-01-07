@@ -74,7 +74,7 @@ And, it's a nice exercise to see how far we can push this, especially if people 
 
 Also, cows!
 
-![Cow massage](moo.jpg)
+![Cow (Swiss Braunvieh breed), below Fuorcla Sesvenna in the Engadin, Switzerland, by Daniel Schwen](moo.jpg)
 
 ---
 
