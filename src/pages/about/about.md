@@ -26,7 +26,7 @@ Where possible, Supermeowkat wants to be explicit about its ethics. We're totall
 - Polyamorous and open relationships
 - Abortion
 - Responsible drug use
-- Nipples and nudes on social media
+- Nudity on social media
 
 Supermeowkat is NOT ok with:
 
