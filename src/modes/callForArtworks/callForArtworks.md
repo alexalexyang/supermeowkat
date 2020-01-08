@@ -108,6 +108,8 @@ Mail submissions to alexalexyang@gmail.com.
   - I don’t know about other languages for now. Maybe in future with WebAssembly.
 - Website:
   - Send me image and URL
+- Performance
+  - No idea how this might work. Is it performance art, or live art as people seem to call it in the UK? Is it for launch night/day? Do we need a Discord channel for it? Do you want to give a tour of an abattoir? Should it be streamed on YouTube? It's wide open. Let's discuss and see how it goes.
 - Other formats:
   - If it’s not more than 5 min of work for me we’ll probably do it
 
