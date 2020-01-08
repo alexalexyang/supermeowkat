@@ -46,7 +46,7 @@ A modest online exhibition with digital works only.
 
 # When
 
-Open call: 20 Jan - 20 Feb 2020
+Open call: 10 Jan - 20 Feb 2020
 
 Artists notified by: 15 Mar 2020
 
@@ -68,9 +68,9 @@ I might make it look nicer if I have more time. Make it look less catalogue, mor
 
 # Why
 
-It’s really lonely here. I have to reach out somehow. So, if we can build relationships online, we should do it.
+It's a nice exercise to see how far we can push this format, especially if people send in code art. Just coding this website with Gatsby alone showed me how to embed videos in markdown, which can't be done with pure markdown. Pretty cool.
 
-And, it's a nice exercise to see how far we can push this, especially if people send in code art. Just coding this website with Gatsby alone showed me how to embed videos in markdown, which can't be done with pure markdown. Pretty cool.
+What happens if people send in a Jupyter notebook of statistics art? What if it's a set of JavaScript functions? What if it's a live performance art piece from a farm? I think there's a lot to explore here, if people even send in anything. Most of it won't be of interest to the casual viewer. But to curators and tech folks, it might be something.
 
 Also, cows!
 
