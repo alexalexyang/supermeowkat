@@ -27,6 +27,7 @@ Where possible, Supermeowkat wants to be explicit about its ethics. We're totall
 - Abortion
 - Responsible drug use
 - Nudity on social media
+- Active euthanasia
 
 Supermeowkat is NOT ok with:
 
