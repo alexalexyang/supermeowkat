@@ -67,7 +67,6 @@ export const blogpostsQuery = graphql`
             slug
           }
           frontmatter {
-            path
             title
             date(formatString: "YYYY-MM-DD")
             author

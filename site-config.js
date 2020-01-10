@@ -4,8 +4,8 @@ module.exports =
         blog: true,
         mailchimp: true,
         noExhibition: false,
-        exhibition: false,
-        callForArtworks: true,
+        exhibition: true,
+        callForArtworks: false,
       }
     : {
         blog: false,

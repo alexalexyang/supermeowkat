@@ -1,23 +1,47 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import SupportSupermeowkat from "../../components/supportSupermeowkat"
+import Img from "gatsby-image"
 
 export default function Exhibition() {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
-        filter: { frontmatter: { mode: { eq: "exhibition" } } }
+      allFile(
+        filter: {
+          extension: { eq: "md" }
+          relativePath: { regex: "/exhibition/artists/" }
+        }
       ) {
         edges {
           node {
-            frontmatter {
-              title
-              artist
-              medium
-              artworkURI
-              path
+            childMarkdownRemark {
+              frontmatter {
+                artist
+                artworkURI {
+                  base
+                }
+                featuredImage {
+                  childImageSharp {
+                    fluid {
+                      base64
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
+                  }
+                }
+                excerpt
+                medium
+                paypal
+                title
+                urls
+              }
+              html
+              fields {
+                slug
+              }
             }
-            html
           }
         }
       }
@@ -32,29 +56,28 @@ export default function Exhibition() {
       </div>
       <div>
         <h1>The artworks</h1>
-        {data.allMarkdownRemark.edges.map(node => (
+        {data.allFile.edges.map(node => (
           <div>
-            <div>
-              <p>
-                Artwork thumbnail will be here using{" "}
-                {node.node.frontmatter.artworkURI}.
-              </p>
+            <div className="artwork">
+              <Img
+                fluid={
+                  node.node.childMarkdownRemark.frontmatter.featuredImage
+                    .childImageSharp.fluid
+                }
+              />
             </div>
-            <div>
-              <p>
-                <Link to={node.node.frontmatter.path}>
-                  {node.node.frontmatter.artworkURI}
-                </Link>
-              </p>
+            <div className="artwork-details">
               <ul className="artwork-list">
                 <li className="artwork-list-item">
-                  Title: {node.node.frontmatter.title}
+                  <Link to={node.node.childMarkdownRemark.fields.slug}>
+                    Title: {node.node.childMarkdownRemark.frontmatter.title}
+                  </Link>
                 </li>
                 <li className="artwork-list-item">
-                  Medium: {node.node.frontmatter.medium}
+                  Medium: {node.node.childMarkdownRemark.frontmatter.medium}
                 </li>
                 <li className="artwork-list-item">
-                  Artist: {node.node.frontmatter.artist}
+                  Artist: {node.node.childMarkdownRemark.frontmatter.artist}
                 </li>
               </ul>
             </div>

@@ -1,33 +1,52 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Support from "../components/support"
 import SEO from "../components/seo"
+import Video from "./video"
 
 export default function Artwork({ data }) {
-  const post = data.markdownRemark
-  const urlsData = JSON.parse(post.frontmatter.urls)
+  const artwork = data.markdownRemark
+  const images = data.allFile
+  const urlsData = JSON.parse(artwork.frontmatter.urls)
+
+  const getImage = () => {
+    const image = images.edges.find(
+      node => node.node.base === artwork.frontmatter.artworkURI.base
+    )
+    return <Img fluid={image.node.childImageSharp.fluid} />
+  }
 
   return (
     <Layout>
       <SEO
-        title={post.frontmatter.artist}
-        description={post.frontmatter.excerpt}
+        title={artwork.frontmatter.artist}
+        description={artwork.frontmatter.excerpt}
       />
       <div>
-        <div>
-          <p>Artwork will be here using {post.frontmatter.artworkURI}.</p>
+        <div className="artwork">
+          {artwork.frontmatter.medium === "image" && getImage()}
+          {artwork.frontmatter.medium === "video" && (
+            <div className="video-container">
+              <Video
+                title={artwork.frontmatter.title}
+                src={artwork.frontmatter.artworkURI.base}
+              />
+            </div>
+          )}
         </div>
-        <div>
+
+        <div className="artwork-details">
           <ul className="artwork-list">
             <li className="artwork-list-item">
-              Title: {post.frontmatter.title}
+              Title: {artwork.frontmatter.title}
             </li>
             <li className="artwork-list-item">
-              Artist: {post.frontmatter.artist}
+              Artist: {artwork.frontmatter.artist}
             </li>
             <li className="artwork-list-item">
-              Medium: {post.frontmatter.medium}
+              Medium: {artwork.frontmatter.medium}
             </li>
             <li className="artwork-list-item">
               URLs:{" "}
@@ -38,14 +57,16 @@ export default function Artwork({ data }) {
               ))}
             </li>
             <li className="artwork-list-item">
-              {/* PayPal: {post.frontmatter.paypal} */}
-              <Support buttonText="Support the artist" />
+              {/* PayPal: {artwork.frontmatter.paypal} */}
+              <div className="paypal">
+                <Support buttonText="Support the artist" />
+              </div>
             </li>
           </ul>
         </div>
         <div
           className="md-text"
-          dangerouslySetInnerHTML={{ __html: post.html }}
+          dangerouslySetInnerHTML={{ __html: artwork.html }}
         ></div>
       </div>
     </Layout>
@@ -57,15 +78,37 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        path
         title
         artist
-        date
         urls
         medium
-        artworkURI
+        artworkURI {
+          base
+        }
         paypal
         excerpt
+      }
+    }
+
+    allFile(
+      filter: {
+        extension: { regex: "/jpeg|jpg|png|gif/" }
+        relativePath: { regex: "/exhibition/artists/" }
+      }
+    ) {
+      edges {
+        node {
+          base
+          childImageSharp {
+            fluid {
+              base64
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
+        }
       }
     }
   }

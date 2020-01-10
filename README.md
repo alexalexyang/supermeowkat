@@ -297,3 +297,7 @@ Inside `pageContext` destructured from props are `previousPagePath` and `nextPag
 ## Google Analytics
 
 [Send custom click events to GA](https://stackoverflow.com/questions/56943144/how-use-gatsby-plugin-google-gtag-with-gatsby-js)
+
+## Others
+
+[Gatsby scheme customisation](https://www.gatsbyjs.org/docs/schema-customization/)

@@ -77,7 +77,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `exhibitionPages`,
+        name: `modes`,
         path: `${__dirname}/src/modes`,
       },
     },
