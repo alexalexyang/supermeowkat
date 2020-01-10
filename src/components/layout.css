@@ -761,3 +761,7 @@ header div ul li a {
 .paypal {
   margin: 20px 0 20px 0;
 }
+
+.exhibition-preview-image {
+  max-width: 700px;
+}

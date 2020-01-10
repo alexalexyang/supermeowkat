@@ -58,7 +58,7 @@ export default function Exhibition() {
         <h1>The artworks</h1>
         {data.allFile.edges.map(node => (
           <div>
-            <div className="artwork">
+            <div className="artwork exhibition-preview-image">
               <Img
                 fluid={
                   node.node.childMarkdownRemark.frontmatter.featuredImage
