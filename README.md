@@ -6,6 +6,13 @@ It has three main features: pages, modes (for art), and a blog.
 
 The site is [live](https://supermeowkat.notathoughtexperiment.me). However, not all paths have been enabled. You can see a sample blog and sample blogposts by manually going to /blog. Artwork pages are not ready.
 
+# Upcoming features
+
+- Add react-share buttons to blogposts and artworks
+- Handle images for SEO, ie, for social media posts, using publicURL [link](https://github.com/gatsbyjs/gatsby/issues/13359)
+- Search function for content on site
+- Polish up art pages
+
 # Pages
 
 To make a page, create a markdown file in src/pages. The filename minus the extension will automatically be added to the navigation bar.
@@ -161,15 +168,6 @@ I do not recommend Google because the company has become a huge privacy concern 
 # CSS
 
 They're all in src/components/layout.css.
-
-# Upcoming features
-
-- Fix artwork portion of exhibition artwork pages
-- Handle images for SEO, ie, for social media posts, using publicURL [link](https://github.com/gatsbyjs/gatsby/issues/13359)
-- Finally add /blog and /exhibition path prefixes? [Configuring pages with matchPath](https://www.gatsbyjs.org/docs/client-only-routes-and-user-authentication/#configuring-pages-with-matchpath)
-- Add config file to turn on things like about and contact page, and also mailchimp
-- Search function for content on site
-- Path prefixes like /blog and /art although I've no idea how to do this because the usual `onCreateNode` doesn't expose the right APIs to grab posts from directories
 
 # For developers
 
