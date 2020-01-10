@@ -13,12 +13,8 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            html
             frontmatter {
               path
-              title
-              author
-              date
             }
           }
         }
@@ -31,12 +27,8 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            html
-            frontmatter {
-              path
-              title
-              artist
-              date
+            fields {
+              slug
             }
           }
         }
@@ -47,12 +39,8 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            html
             frontmatter {
               path
-              title
-              author
-              date
             }
             fields {
               slug
@@ -75,8 +63,11 @@ exports.createPages = ({ actions, graphql }) => {
 
     res.data.exhibition.edges.forEach(({ node }) => {
       createPage({
-        path: node.frontmatter.path,
+        path: node.fields.slug,
         component: path.resolve("src/templates/artworkTemplate.js"),
+        context: {
+          slug: node.fields.slug,
+        },
       })
     })
 
@@ -115,6 +106,18 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: `slug`,
       value: `/blog${slug}`,
+    })
+  }
+
+  if (
+    node.internal.type === `MarkdownRemark` &&
+    node.fileAbsolutePath.includes("modes")
+  ) {
+    const slug = createFilePath({ node, getNode, basePath: `src/modes` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
     })
   }
 }

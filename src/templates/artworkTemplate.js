@@ -53,8 +53,8 @@ export default function Artwork({ data }) {
 }
 
 export const query = graphql`
-  query ArtworkQuery($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query ArtworkQuery($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         path
