@@ -1,5 +1,7 @@
+const siteData = require("./site-config")
 const path = require("path")
 const { paginate } = require("gatsby-awesome-pagination")
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -52,6 +54,9 @@ exports.createPages = ({ actions, graphql }) => {
               author
               date
             }
+            fields {
+              slug
+            }
           }
         }
       }
@@ -75,21 +80,41 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
 
-    res.data.blogposts.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: path.resolve("src/templates/blogpostTemplate.js"),
+    if (siteData.blog === true) {
+      res.data.blogposts.edges.forEach(({ node }) => {
+        createPage({
+          path: node.fields.slug,
+          component: path.resolve("src/templates/blogpostTemplate.js"),
+          context: {
+            slug: node.fields.slug,
+          },
+        })
       })
-    })
 
-    // Create paginated blog list page
-    const blogposts = res.data.blogposts.edges
-    paginate({
-      createPage,
-      items: blogposts,
-      itemsPerPage: 3,
-      pathPrefix: "/blog",
-      component: path.resolve("src/templates/blogTemplate.js"),
-    })
+      // Create paginated blog list page
+      const blogposts = res.data.blogposts.edges
+      paginate({
+        createPage,
+        items: blogposts,
+        itemsPerPage: 3,
+        pathPrefix: "/blog",
+        component: path.resolve("src/templates/blogTemplate.js"),
+      })
+    }
   })
+}
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (
+    node.internal.type === `MarkdownRemark` &&
+    node.fileAbsolutePath.includes("blogposts")
+  ) {
+    const slug = createFilePath({ node, getNode, basePath: `src/blogposts` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: `/blog${slug}`,
+    })
+  }
 }

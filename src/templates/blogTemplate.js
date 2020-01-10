@@ -26,7 +26,7 @@ function Blog({ data, pageContext }) {
               </div>
               <div className="bloglist-blogpost-details">
                 <h2 className="blogpost-title">
-                  <Link to={node.node.frontmatter.path}>
+                  <Link to={node.node.fields.slug}>
                     {node.node.frontmatter.title}
                   </Link>
                 </h2>
@@ -63,6 +63,9 @@ export const blogpostsQuery = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             path
             title

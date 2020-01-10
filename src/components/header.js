@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-// import { blogOn } from "../templates/blogTemplate"
 import siteData from "../../site-config"
 
 const Header = ({ siteTitle }) => {

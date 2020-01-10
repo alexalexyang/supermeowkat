@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 
-export default function Artwork({ data }) {
+export default function Blogpost({ data }) {
   const post = data.markdownRemark
 
   return (
@@ -28,8 +28,8 @@ export default function Artwork({ data }) {
 }
 
 export const query = graphql`
-  query blogpostQuery($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         title
