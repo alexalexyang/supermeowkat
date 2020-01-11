@@ -89,6 +89,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `exhibition`,
+        path: `${__dirname}/src/modes/exhibition`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Supermeowkat`,

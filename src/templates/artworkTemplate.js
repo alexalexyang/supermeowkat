@@ -52,7 +52,7 @@ export default function Artwork({ data }) {
             <li className="artwork-list-item">
               URLs:{" "}
               {Object.keys(urlsData).map(key => (
-                <span>
+                <span key={key}>
                   <a href={urlsData[key]}>{key}</a>,{" "}
                 </span>
               ))}

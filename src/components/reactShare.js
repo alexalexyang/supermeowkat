@@ -50,12 +50,21 @@ import {
 } from "react-share"
 
 function ReactShare({ title, description, image, hashtag }) {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          url
+        }
+      }
+    }
+  `)
+
   const shareUrl =
     (typeof window !== "undefined" && window.location) ||
-    "https://supermeowkat.notathoughtexperiment.me"
+    data.site.siteMetadata.url
 
-    console.log(shareUrl)
-  image = `https://supermeowkat.notathoughtexperiment.me${image}`
+  image = `${data.site.siteMetadata.url}${image}`
 
   const iconColour = "rgb(175, 135, 195)"
 
@@ -65,7 +74,7 @@ function ReactShare({ title, description, image, hashtag }) {
         <FacebookShareButton
           url={shareUrl}
           quote={description}
-          hashtag={title}
+          // hashtag={title}
           className="network-share-button"
         >
           <FacebookIcon
@@ -89,7 +98,7 @@ function ReactShare({ title, description, image, hashtag }) {
       <div className="social-media-network">
         <FacebookMessengerShareButton
           url={shareUrl}
-          appId="521270401588372"
+          // appId="521270401588372"
           className="network-share-button"
         >
           <FacebookMessengerIcon
@@ -105,8 +114,8 @@ function ReactShare({ title, description, image, hashtag }) {
         <TwitterShareButton
           url={shareUrl}
           title={title}
-          via={shareUrl}
-          hashtags=""
+          // via="someone"
+          // hashtags=""
           className="network-share-button"
         >
           <TwitterIcon
@@ -176,7 +185,7 @@ function ReactShare({ title, description, image, hashtag }) {
         <PinterestShareButton
           url={shareUrl}
           description={description}
-          media={"image"}
+          media={image}
           className="network-share-button"
         >
           <PinterestIcon
@@ -198,7 +207,7 @@ function ReactShare({ title, description, image, hashtag }) {
       <div className="social-media-network">
         <VKShareButton
           url={shareUrl}
-          image={"image"}
+          image={image}
           className="network-share-button"
         >
           <VKIcon
@@ -222,7 +231,7 @@ function ReactShare({ title, description, image, hashtag }) {
           url={shareUrl}
           title={title}
           description={description}
-          image={"image"}
+          image={image}
           className="network-share-button"
         >
           <OKIcon
@@ -270,7 +279,7 @@ function ReactShare({ title, description, image, hashtag }) {
           url={shareUrl}
           title={title}
           caption={description}
-          tags={""}
+          // tags={""}
           className="network-share-button"
         >
           <TumblrIcon
@@ -310,7 +319,7 @@ function ReactShare({ title, description, image, hashtag }) {
           url={shareUrl}
           title={title}
           description={description}
-          imageUrl={"image"}
+          imageUrl={image}
           className="network-share-button"
         >
           <MailruIcon
@@ -357,7 +366,7 @@ function ReactShare({ title, description, image, hashtag }) {
         <WorkplaceShareButton
           url={shareUrl}
           quote={description}
-          hashtag=""
+          // hashtag=""
           className="network-share-button"
         >
           <WorkplaceIcon
@@ -388,7 +397,7 @@ function ReactShare({ title, description, image, hashtag }) {
         <WeiboShareButton
           url={shareUrl}
           title={title}
-          image={"image"}
+          image={image}
           className="network-share-button"
         >
           <WeiboIcon
