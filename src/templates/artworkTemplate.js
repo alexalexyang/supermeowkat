@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Support from "../components/support"
 import SEO from "../components/seo"
 import Video from "./video"
+import ReactShare from "../components/reactShare"
 
 export default function Artwork({ data }) {
   const artwork = data.markdownRemark
@@ -61,6 +62,13 @@ export default function Artwork({ data }) {
               <div className="paypal">
                 <Support buttonText="Support the artist" />
               </div>
+              <div className="react-share-container">
+                <ReactShare
+                  title={artwork.frontmatter.title}
+                  description={artwork.frontmatter.excerpt}
+                  image={artwork.frontmatter.featuredImage.publicURL}
+                />
+              </div>
             </li>
           </ul>
         </div>
@@ -84,6 +92,9 @@ export const query = graphql`
         medium
         artworkURI {
           base
+        }
+        featuredImage {
+          publicURL
         }
         paypal
         excerpt

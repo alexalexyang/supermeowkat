@@ -9,6 +9,7 @@ The site is [live](https://supermeowkat.notathoughtexperiment.me). However, not 
 # Upcoming features
 
 - Add react-share buttons to blogposts and artworks
+- Shift navbar items into site-config?
 - Handle images for SEO, ie, for social media posts, using publicURL [link](https://github.com/gatsbyjs/gatsby/issues/13359)
 - Search function for content on site
 - Polish up art pages
