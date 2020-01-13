@@ -624,10 +624,8 @@ hr {
 }
 
 header {
-  /* background: rgb(199, 185, 185, 0.8); */
   margin-bottom: 1.45rem;
   display: flex;
-  border-bottom: 2px solid rgb(175, 135, 195);
 }
 header div {
   max-width: 960;
@@ -642,7 +640,6 @@ header h1 {
 }
 
 header div h1 a {
-  color: white;
   text-decoration: none;
 }
 
@@ -661,7 +658,7 @@ header div ul li {
 }
 
 header div ul li a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 

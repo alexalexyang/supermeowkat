@@ -31,7 +31,7 @@ const Header = ({ siteTitle }) => {
               width="48"
               height="48"
               xmlns="http://www.w3.org/2000/svg"
-              fill="white"
+              fill="black"
               fillRule="evenodd"
               clipRule="evenodd"
             >
