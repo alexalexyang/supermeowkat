@@ -624,7 +624,7 @@ hr {
 }
 
 header {
-  background: rgb(199, 185, 185, 0.8);
+  /* background: rgb(199, 185, 185, 0.8); */
   margin-bottom: 1.45rem;
   display: flex;
   border-bottom: 2px solid rgb(175, 135, 195);
