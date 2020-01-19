@@ -307,3 +307,5 @@ Inside `pageContext` destructured from props are `previousPagePath` and `nextPag
 ## Others
 
 [Gatsby scheme customisation](https://www.gatsbyjs.org/docs/schema-customization/)
+
+[CSS overlay with z-index](https://www.tutorialrepublic.com/codelab.php?topic=faq&file=css-overlay-one-div-over-another-div)

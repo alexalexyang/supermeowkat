@@ -6,6 +6,7 @@ import NoExhibition from "../modes/noExhibition"
 import Exhibition from "../modes/exhibition"
 import CallForArtworks from "../modes/callForArtworks"
 import siteData from "../../site-config"
+import Webdev from "../atelier/webdev/webdev"
 
 export default function IndexPage() {
   return (
@@ -28,6 +29,7 @@ export default function IndexPage() {
         {siteData.exhibition && <Exhibition />}
         {siteData.callForArtworks && <CallForArtworks />}
       </div>
+      {/* <Webdev /> */}
     </Layout>
   )
 }

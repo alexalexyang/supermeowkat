@@ -11851,14 +11851,20 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
-navbar,
-body,
-footer {
+html,
+.navbar,
+.footer {
   background: #eeeaea;
 }
 
 .navbar-item a {
   color: black;
+}
+
+a.navbar-item:hover,
+a.navbar-item:focus,
+a.navbar-item:focus-within {
+  background: #eeeaea;
 }
 
 .artwork-details ul {
@@ -11867,5 +11873,21 @@ footer {
 
 .support-input {
   max-width: 200px;
+}
+
+.webdev-main {
+  height: 100vh;
+  width: 100vw;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.webdev-main .section {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
 }
 /*# sourceMappingURL=layout_bulma.css.map */
