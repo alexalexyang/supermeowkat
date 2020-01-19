@@ -12,16 +12,18 @@ export default function Blogpost({ data }) {
         title={post.frontmatter.title}
         description={post.frontmatter.excerpt}
       />
-      <div>
-        <div>
-          <p className="blogpost-details">
-            Written {post.frontmatter.date} by {post.frontmatter.author}
+      <div className="section">
+        <div className="container">
+          <p className="blogpost-details content">
+            Written <time dateTime={post.frontmatter.date}>{post.frontmatter.date}</time> by {post.frontmatter.author}
           </p>
         </div>
-        <div
-          className="md-text"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        ></div>
+        <div className="container">
+          <article 
+          className="md-text container content is-medium"
+        dangerouslySetInnerHTML={{ __html: post.html }}>
+          </article>
+          </div>
       </div>
     </Layout>
   )

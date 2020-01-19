@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Alex Yang <alexalexyang@gmail.com>",
   "dependencies": {
+    "bulma": "^0.8.0",
     "gatsby": "^2.18.12",
     "gatsby-awesome-pagination": "^0.3.5",
     "gatsby-image": "^2.2.34",
@@ -13,6 +14,7 @@
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-offline": "^3.0.27",
     "gatsby-plugin-react-helmet": "^3.1.16",
+    "gatsby-plugin-sass": "^2.1.27",
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-remark-copy-linked-files": "^2.1.33",
     "gatsby-remark-embed-video": "^2.0.1",
@@ -23,6 +25,7 @@
     "gatsby-transformer-remark": "^2.6.45",
     "gatsby-transformer-sharp": "^2.3.7",
     "lazysizes": "^5.2.0",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

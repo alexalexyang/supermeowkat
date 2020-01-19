@@ -1,0 +1,28 @@
+$navbar-breakpoint: 700px;
+$background: rgb(238, 234, 234);
+
+@import "../../../node_modules/bulma/bulma.sass";
+
+html,
+.navbar,
+.footer {
+  background: $background;
+}
+
+.navbar-item a {
+  color: black;
+}
+
+a.navbar-item:hover,
+a.navbar-item:focus,
+a.navbar-item:focus-within {
+  background: $background;
+}
+
+.artwork-details ul {
+  list-style-type: none;
+}
+
+.support-input {
+  max-width: 200px;
+}

@@ -12,6 +12,7 @@ module.exports = {
     author: `Alex | not a thought experiment`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

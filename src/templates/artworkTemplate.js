@@ -26,7 +26,8 @@ export default function Artwork({ data }) {
         description={artwork.frontmatter.excerpt}
       />
       <div>
-        <div className="artwork">
+        <section className="artwork section">
+          <div className="container">
           {artwork.frontmatter.medium === "image" && getImage()}
           {artwork.frontmatter.medium === "video" && (
             <div className="video-container">
@@ -36,9 +37,11 @@ export default function Artwork({ data }) {
               />
             </div>
           )}
-        </div>
+          </div>
+        </section>
 
-        <div className="artwork-details">
+        <section className="artwork-details section">
+        <div className="container content is-medium">
           <ul className="artwork-list">
             <li className="artwork-list-item">
               Title: {artwork.frontmatter.title}
@@ -71,11 +74,16 @@ export default function Artwork({ data }) {
               </div>
             </li>
           </ul>
-        </div>
-        <div
-          className="md-text"
-          dangerouslySetInnerHTML={{ __html: artwork.html }}
-        ></div>
+          </div>
+        </section>
+        <section className="md-text section">
+          <div className="container">
+            <article 
+            className="content is-medium" 
+            dangerouslySetInnerHTML={{ __html: artwork.html }}>
+              </article>
+              </div>
+              </section>
       </div>
     </Layout>
   )

@@ -21,13 +21,16 @@ export default function Support({ buttonText }) {
   const quantity = () => {
     return (
       <form id="appreciationForm" onSubmit={loadPayPal}>
-        Amount of appreciation:{" "}
         <input
+          className="support-input input is-rounded"
           type="number"
           name="quantity"
           onChange={e => setAmount(e.target.value)}
+          placeholder="Enter amount"
         />
-        <button type="submit">PayPal</button>
+        <button className="button is-rounded" type="submit">
+          PayPal
+        </button>
       </form>
     )
   }
@@ -41,13 +44,13 @@ export default function Support({ buttonText }) {
 
   return (
     <div>
-      <div>{support()}</div>
+      <div className="container">{support()}</div>
       {supported ? null : (
         <div className="container" id="paypal-button-container"></div>
       )}
       {supported ? (
-        <div>
-          <p>
+        <div className="container">
+          <p className="content">
             Thank you for your support.{" "}
             <svg
               className="thanks"

@@ -15,15 +15,21 @@ export default function Page({ data }) {
         title={data.markdownRemark.frontmatter.title}
         description={data.markdownRemark.frontmatter.excerpt}
       />
-      <div
-        className="md-text"
+      <div className="section">
+      <div className="container">
+      <article
+        className="md-text content is-medium"
         dangerouslySetInnerHTML={{ __html: post.html }}
-      ></div>
+      ></article>
+      </div>
+      </div>
+      <div className="section">
       {data.markdownRemark.frontmatter.path === "/about" && (
         <SupportSupermeowkat />
       )}
       {data.markdownRemark.frontmatter.path === "/contact" &&
         siteData.mailchimp && <Mailchimp />}
+        </div>
     </Layout>
   )
 }

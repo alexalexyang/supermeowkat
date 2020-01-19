@@ -2,6 +2,8 @@
 
 Supermeowkat is built with Gatsby. It focuses on markdown for as many things as possible.
 
+Bulma and SCSS handle styling.
+
 It has three main features: pages, modes (for art), and a blog.
 
 The site is [live](https://supermeowkat.notathoughtexperiment.me). However, not all paths have been enabled. You can see a sample blog and sample blogposts by manually going to /blog. Artwork pages are not ready.

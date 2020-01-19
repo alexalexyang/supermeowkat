@@ -10,38 +10,42 @@ function Blog({ data, pageContext }) {
   return (
     <Layout>
       <SEO title="Blog" description="Supermeowkat says meoooowww." />
-      <div>
-        <h1>Blog</h1>
+      <div className="section">
+        <div className="container">
+        <h1 className="title">Blog</h1>
+        </div>
+        <div className="container">
         {data.allMarkdownRemark.edges.map(node => (
-          <div key={node.node.id}>
-            <div className="bloglist-card">
-              <div className="bloglist-blogpost-image">
-                {node.node.frontmatter.featuredImage && (
-                  <Img
-                    fixed={
-                      node.node.frontmatter.featuredImage.childImageSharp.fixed
-                    }
-                  />
-                )}
-              </div>
-              <div className="bloglist-blogpost-details">
-                <h2 className="blogpost-title">
-                  <Link to={node.node.fields.slug}>
-                    {node.node.frontmatter.title}
-                  </Link>
-                </h2>
-                <p className="blogpost-details">
-                  Written {node.node.frontmatter.date} by{" "}
-                  {node.node.frontmatter.author}
-                </p>
-                <p>{node.node.frontmatter.excerpt}</p>
-              </div>
+          <div className="bloglist-card container" key={node.node.id}>
+            <div className="bloglist-blogpost-image">
+              {node.node.frontmatter.featuredImage && (
+                <Img
+                  fixed={
+                    node.node.frontmatter.featuredImage.childImageSharp.fixed
+                  }
+                />
+              )}
+            </div>
+            <div className="bloglist-blogpost-details">
+              <h2 className="blogpost-title subtitle">
+                <Link to={node.node.fields.slug}>
+                  {node.node.frontmatter.title}
+                </Link>
+              </h2>
+              <p className="blogpost-details">
+                Written{" "}
+                <time dateTime={node.node.frontmatter.date}>
+                  {node.node.frontmatter.date}
+                </time>{" "}
+                by {node.node.frontmatter.author}
+              </p>
+              <p className="content is-medium">{node.node.frontmatter.excerpt}</p>
             </div>
             <hr />
           </div>
         ))}
-
-        <div>
+      </div>
+        <div className="container">
           {previousPagePath && <Link to={previousPagePath}>Previous</Link>}{" "}
           {nextPagePath && <Link to={nextPagePath}>Next</Link>}
         </div>
