@@ -2,7 +2,7 @@
 
 Supermeowkat is built with Gatsby. It focuses on markdown for as many things as possible.
 
-Bulma and SCSS handle styling.
+Bulma and SCSS handle styling...
 
 It has three main features: pages, modes (for art), and a blog.
 
